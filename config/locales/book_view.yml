@@ -2,6 +2,8 @@ ja:
   view:
     index:
       title: 一覧
+    flash:
+      notice: "本を%{action}しました"
   button:
     new: 新規作成
     edit: 編集
