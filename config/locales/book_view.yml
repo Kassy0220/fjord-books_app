@@ -3,11 +3,11 @@ ja:
     index:
       title: 一覧
     new:
-      title: メモ作成
+      title: 作成
     edit:
-      title: メモ編集
+      title: 編集
     flash:
-      notice: "本のメモを%{action}しました"
+      notice: "本の情報を%{action}しました"
   button:
     new: 新規作成
     edit: 編集
