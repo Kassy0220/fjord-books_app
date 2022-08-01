@@ -4,6 +4,8 @@ ja:
       title: 一覧
     new:
       title: メモ作成
+    edit:
+      title: メモ編集
     flash:
       notice: "本のメモを%{action}しました"
   button:
