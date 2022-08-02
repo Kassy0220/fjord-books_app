@@ -210,3 +210,5 @@ ja:
       create: 本情報を作成しました
       update: 本情報を更新しました
       delete: 本情報を削除しました
+  form:
+    confirm: 本当によろしいですか？

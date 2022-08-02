@@ -36,3 +36,5 @@ en:
       create: Book was successfully created.
       update: Book was successfully updated.
       delete: Book was successfully deleted.
+  form:
+    confirm: Are you sure?
