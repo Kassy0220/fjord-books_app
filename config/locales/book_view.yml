@@ -6,8 +6,6 @@ ja:
       title: 作成
     edit:
       title: 編集
-    flash:
-      notice: "本の情報を%{action}しました"
   button:
     new: 新規作成
     edit: 編集

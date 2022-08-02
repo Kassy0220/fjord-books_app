@@ -205,3 +205,8 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  flash:
+    notice:
+      create: 本情報を作成しました
+      update: 本情報を更新しました
+      delete: 本情報を削除しました
