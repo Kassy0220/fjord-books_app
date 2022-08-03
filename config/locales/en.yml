@@ -38,3 +38,8 @@ en:
       delete: Book was successfully deleted.
   form:
     confirm: Are you sure?
+  errors:
+    template:
+      header:
+        one: "%{count} error prohibited this %{model} from being saved:"
+        other: "%{count} errors prohibited this %{model} from being saved:"
