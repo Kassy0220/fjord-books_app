@@ -12,3 +12,11 @@ ja:
     show: 詳細
     destroy: 削除
     back: 戻る
+en:
+  view:
+    index:
+      title: Books
+    new:
+      title: New Book
+    edit:
+      title: Editing Book
