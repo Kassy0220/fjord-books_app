@@ -221,6 +221,8 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    button:
+      logout: ログアウト
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
