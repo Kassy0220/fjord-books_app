@@ -207,9 +207,9 @@ ja:
     pm: 午後
   flash:
     notice:
-      create: 本情報を作成しました
-      update: 本情報を更新しました
-      delete: 本情報を削除しました
+      create: "%{resource}を作成しました"
+      update: "%{resource}を更新しました"
+      delete: "%{resource}を削除しました"
   form:
     confirm: 本当によろしいですか？
   view:

@@ -32,9 +32,9 @@
 en:
   flash:
     notice:
-      create: Book was successfully created.
-      update: Book was successfully updated.
-      delete: Book was successfully deleted.
+      create: "%{resource} was successfully created."
+      update: "%{resource} was successfully updated."
+      delete: "%{resource} was successfully deleted."
   form:
     confirm: Are you sure?
   errors:
