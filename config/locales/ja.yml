@@ -212,3 +212,14 @@ ja:
       delete: 本情報を削除しました
   form:
     confirm: 本当によろしいですか？
+  view:
+    common:
+      title_index: "%{name}一覧"
+      title_new: "%{name}作成"
+      title_edit: "%{name}編集"
+    button:
+      new: 新規作成
+      edit: 編集
+      show: 詳細
+      destroy: 削除
+      back: 戻る

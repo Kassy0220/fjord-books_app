@@ -42,3 +42,8 @@ en:
       header:
         one: "%{count} error prohibited this %{model} from being saved:"
         other: "%{count} errors prohibited this %{model} from being saved:"
+  view:
+    common:
+      title_index: "%{name}s"
+      title_new: "New %{name}"
+      title_edit: "Editing %{name}"
