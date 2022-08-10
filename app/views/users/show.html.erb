@@ -1,3 +1,11 @@
 <h1><%= @user.name %></h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+
+<p>郵便番号: <%= @user.post_code %></p>
+<p>住所: <%= @user.address %></p>
+
+<span>[自己紹介文]</span>
+<p><%= @user.biography %>
+
+<%= link_to 'プロフィールの編集', edit_user_registration_path if @user == current_user%>
