@@ -6,4 +6,6 @@ class User < ApplicationRecord
   max_paginates_per 5
 
   validates :name, presence: true
+  validates :post_code, format: { with: /\d{3}-\d{4}/ }
+  validates :biography, length: { maximum: 150 }
 end
