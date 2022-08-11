@@ -231,6 +231,7 @@ ja:
       logout: ログアウト
       to_users: ユーザー一覧
       to_books: 本一覧
+      to_myprofile: アカウント情報
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

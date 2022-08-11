@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to t('views.button.logout'), destroy_user_session_path, method: :delete %>
+<%= link_to t('views.button.to_myprofile'), current_user %> | <%= link_to t('views.button.logout'), destroy_user_session_path, method: :delete %>
