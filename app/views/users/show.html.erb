@@ -8,4 +8,6 @@
 <span>[自己紹介文]</span>
 <p><%= @user.biography %>
 
+<p><%= link_to t('views.common.back'), users_path %></p>
+
 <%= link_to 'プロフィールの編集', edit_user_registration_path if @user == current_user%>
