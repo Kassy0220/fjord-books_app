@@ -10,9 +10,7 @@ class User < ApplicationRecord
   def validate_file_type
     return unless icon.attached?
 
-    valid_file_types = %w(image/jpeg image/png image/gif)
-    if !valid_file_types.include?(icon.blob.content_type)
-      errors.add(:icon, I18n.t('errors.messages.invalid_file_type'))
-    end
+    valid_file_types = %w[image/jpeg image/png image/gif]
+    errors.add(:icon, I18n.t('errors.messages.invalid_file_type')) unless valid_file_types.include?(icon.blob.content_type)
   end
 end
