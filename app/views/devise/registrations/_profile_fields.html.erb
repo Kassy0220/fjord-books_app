@@ -5,8 +5,8 @@
 
 <div class="field">
   <%= f.label :icon %>
-  <%= image_tag resource.icon.variant(resize: "100x100") if resource.icon.attached? %><br />
-  <%= f.file_field :icon, accept: 'image/jpeg,image/png,image/gif'%>
+  <%= image_tag resource.icon.variant(resize: "100x100") if resource.icon.variable? && resource.icon.attached? %><br />
+  <%= f.file_field :icon, accept: 'image/jpeg, image/png, image/gif' %>
 </div>
 
 <div class="field">
