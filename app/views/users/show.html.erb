@@ -38,6 +38,8 @@
 <% end %>
 <%= link_to t('views.common.back'), users_path %>
 
+<p><%= @user.followings.count %> フォロー | <%= @user.followers.count %> フォロワー</p>
+
 <% unless current_user == @user %>
   <div id="follow_form">
   <% if current_user.active_followings.exists?(followed_id: @user.id) %>
