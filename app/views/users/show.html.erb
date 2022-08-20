@@ -38,14 +38,14 @@
 <% end %>
 <%= link_to t('views.common.back'), users_path %>
 
-<p><%= @user.followings.count %> フォロー | <%= @user.followers.count %> フォロワー</p>
+<p><%= @user.followings.count %> <%= t('views.common.followings') %> | <%= @user.followers.count %> <%= t('views.common.followers') %> </p>
 
 <% unless current_user == @user %>
   <div id="follow_form">
   <% if current_user.active_followings.exists?(followed_id: @user.id) %>
-    <%= button_to 'フォロー解除', following_path(current_user.active_followings.find_by(followed_id: @user.id)), method: :delete %>
+    <%= button_to t('views.common.unfollow'), following_path(current_user.active_followings.find_by(followed_id: @user.id)), method: :delete %>
   <% else %>
-    <%= button_to 'フォローする', followings_path, method: :post, params: { followed_id: @user.id } %>
+    <%= button_to t('views.common.follow'), followings_path, method: :post, params: { followed_id: @user.id } %>
   <% end %>
   </div>
 <% end %>
