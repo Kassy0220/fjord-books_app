@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def followings
     @user = User.find(params[:id])
-    @users = @user.followings
+    @users = @user.followings.order('followings.created_at desc')
     @title = t('views.common.title_followings', user_name: @user.name)
     @nobody_message = t('views.common.zero_followings', user_name: @user.name) if @users.empty?
 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def followers
     @user = User.find(params[:id])
-    @users = @user.followers
+    @users = @user.followers.order('followings.created_at desc')
     @title = t('views.common.title_followers', user_name: @user.name)
     @nobody_message = t('views.common.zero_followers', user_name: @user.name) if @users.empty?
 
