@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+ /* ページネーションのデザイン */
+
+.pagination {
+  border: solid 1px lightgray;
+  padding: 0.5em;
+  width: fit-content;
+}
+
+.pagination span {
+  display: inline-block;
+  height: 15px;
+  min-width: 15px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.pagination span:last-child {
+  margin-right: 10px;
+}
+
+.pagination span a {
+  text-decoration: none;
+  padding: 5px;
+}
+
+.current {
+  background-color: lightblue;
+  color: white;
+  border-radius: 12px;
+  padding: 5px;
+}
