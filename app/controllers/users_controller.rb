@@ -13,25 +13,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followings
     @title = t('views.common.title_followings', user_name: @user.name)
+    @nobody_message = t('views.common.zero_followings', user_name: @user.name) if @users.empty?
 
-    if @users.empty?
-      @nobody_message = t('views.common.zero_followings', user_name: @user.name)
-      render 'show_follow'
-    else
-      render 'show_follow'
-    end
+    render 'show_follow'
   end
 
   def followers
     @user = User.find(params[:id])
     @users = @user.followers
     @title = t('views.common.title_followers', user_name: @user.name)
+    @nobody_message = t('views.common.zero_followers', user_name: @user.name) if @users.empty?
 
-    if @users.empty?
-      @nobody_message = t('views.common.zero_followers', user_name: @user.name)
-      render 'show_follow'
-    else
-      render 'show_follow'
-    end
+    render 'show_follow'
   end
 end
