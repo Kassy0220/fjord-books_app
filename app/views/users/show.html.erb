@@ -40,7 +40,7 @@
 
 <div>
   <a href="<%= followings_user_path(@user) %>"><%= @user.followings.count %> <%= t('views.common.followings') %></a> | 
-  <%= @user.followers.count %> <%= t('views.common.followers') %>
+  <a href="<%= followers_user_path(@user) %>"><%= @user.followers.count %> <%= t('views.common.followers') %></a>
 </div>
 
 <% unless current_user == @user %>

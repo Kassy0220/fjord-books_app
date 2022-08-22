@@ -1,7 +1,7 @@
-<h1><%= t('views.common.title_following', user_name: @user.name) %></h1>
+<h1><%= @title %></h1>
 
 <% if @users.empty? %>
-  <%= @zero_followings_message %>
+  <p><%= @nobody_message %></p>
 <% else %>
   <ul>
   <% @users.each do |user| %>
