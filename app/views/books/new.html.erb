@@ -1,5 +1,5 @@
-<h1>New Book</h1>
+<h1><%= t('view.common.title_new', name: @book.model_name.human) %></h1>
 
 <%= render 'form', book: @book %>
 
-<%= link_to 'Back', books_path %>
+<%= link_to t('view.button.back'), books_path %>

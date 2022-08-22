@@ -30,4 +30,20 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  flash:
+    notice:
+      create: "%{resource} was successfully created."
+      update: "%{resource} was successfully updated."
+      delete: "%{resource} was successfully deleted."
+  form:
+    confirm: Are you sure?
+  errors:
+    template:
+      header:
+        one: "%{count} error prohibited this %{model} from being saved:"
+        other: "%{count} errors prohibited this %{model} from being saved:"
+  view:
+    common:
+      title_index: "%{name}s"
+      title_new: "New %{name}"
+      title_edit: "Editing %{name}"
