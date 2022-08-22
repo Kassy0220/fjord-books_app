@@ -8,4 +8,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def followings
+    @user = User.find(params[:id])
+    @users = @user.followings
+    if @users.empty?
+      @zero_followings_message = t('views.common.zero_followings', user_name: @user.name)
+      render 'show_follow'
+    else
+      render 'show_follow'
+    end
+  end
 end

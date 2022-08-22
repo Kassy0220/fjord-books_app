@@ -38,7 +38,10 @@
 <% end %>
 <%= link_to t('views.common.back'), users_path %>
 
-<p><%= @user.followings.count %> <%= t('views.common.followings') %> | <%= @user.followers.count %> <%= t('views.common.followers') %> </p>
+<div>
+  <a href="<%= followings_user_path(@user) %>"><%= @user.followings.count %> <%= t('views.common.followings') %></a> | 
+  <%= @user.followers.count %> <%= t('views.common.followers') %>
+</div>
 
 <% unless current_user == @user %>
   <div id="follow_form">

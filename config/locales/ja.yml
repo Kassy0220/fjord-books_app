@@ -222,6 +222,8 @@ ja:
       unfollow: フォロー解除
       followings: フォロー数
       followers: フォロワー数
+      title_following: "%{user_name}のフォロイー"
+      zero_followings: "%{user_name}さんはまだ誰もフォローしていません"
     pagination:
       first: '最初'
       last: '最後'
