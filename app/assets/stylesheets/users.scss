@@ -1,0 +1,13 @@
+.user_list {
+  list-style: none;
+  padding: 0;
+}
+
+.user_list li {
+  line-height: 3em;
+  border-bottom: solid 1px lightgray;
+}
+
+.user_list li a {
+  text-decoration: none;
+}
