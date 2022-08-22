@@ -29,7 +29,7 @@
   <strong><%= User.human_attribute_name(:avatar) %>:</strong>
   <% if @user.avatar.attached? %>
     <br>
-    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150])%>
+    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150]) %>
   <% end %>
 </p>
 
@@ -39,7 +39,7 @@
 <%= link_to t('views.common.back'), users_path %>
 
 <div>
-  <a href="<%= followings_user_path(@user) %>"><%= @user.followings.count %> <%= t('views.common.followings') %></a> | 
+  <a href="<%= followings_user_path(@user) %>"><%= @user.followings.count %> <%= t('views.common.followings') %></a> |
   <a href="<%= followers_user_path(@user) %>"><%= @user.followers.count %> <%= t('views.common.followers') %></a>
 </div>
 
