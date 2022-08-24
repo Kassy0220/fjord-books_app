@@ -1,0 +1,8 @@
+<h1><%= @report.title %></h1>
+
+<p><%= @report.user.name %>さんの日報</p>
+<span>投稿日 : <%= l(@report.created_at, format: :date_only) %></span>
+
+<div class="report_content">
+  <%= @report.content %>
+</div>
