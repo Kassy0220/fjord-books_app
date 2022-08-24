@@ -6,3 +6,7 @@
 <div class="report_content">
   <%= @report.content %>
 </div>
+
+<% if @report.user == current_user %>
+  <div><%= link_to t('views.common.edit'), edit_report_path(@report) %></div>
+<% end %>
