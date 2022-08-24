@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  before_action :set_report, only: %i[edit update destroy]
 
   def index
     @reports = Report.order(id: 'DESC').page(params[:page]).per(10)
@@ -12,9 +13,7 @@ class ReportsController < ApplicationController
     @report = current_user.reports.build
   end
 
-  def edit
-    @report = current_user.reports.find(params[:id])
-  end
+  def edit; end
 
   def create
     @report = current_user.reports.build(report_params)
@@ -27,8 +26,6 @@ class ReportsController < ApplicationController
   end
 
   def update
-    @report = current_user.reports.find(params[:id])
-
     if @report.update(report_params)
       flash[:notice] = t('controllers.common.notice_update', name: Report.model_name.human)
       redirect_to @report
@@ -38,7 +35,6 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    @report = current_user.reports.find(params[:id])
     @report.destroy
 
     flash[:notice] = t('controllers.common.notice_destroy', name: Report.model_name.human)
@@ -49,5 +45,9 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:title, :content)
+  end
+
+  def set_report
+    @report = current_user.reports.find(params[:id])
   end
 end
