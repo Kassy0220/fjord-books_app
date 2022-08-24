@@ -1,0 +1,16 @@
+<h1><%= @reports.model_name.human %></h1>
+
+<div class="reports_list">
+  <ul>
+    <% @reports.each do |report| %>
+    <li>
+      <%= link_to report.title, report %>
+      <span class="report_writer"><%= report.user.name%></span>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= paginate @reports %>
+</div>
