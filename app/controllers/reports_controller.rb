@@ -37,6 +37,14 @@ class ReportsController < ApplicationController
     end
   end
 
+  def destroy
+    @report = current_user.reports.find(params[:id])
+    @report.destroy
+
+    flash[:notice] = t('controllers.common.notice_destroy', name: Report.model_name.human)
+    redirect_to reports_path
+  end
+
   private
 
   def report_params
