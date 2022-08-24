@@ -241,6 +241,9 @@ ja:
     followers:
       index:
         title: フォロワー
+    reports:
+      new:
+        title: 日報作成
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
