@@ -1,0 +1,3 @@
+<h1><%= t('views.common.title_followings', user_name: @user.name) %></h1>
+
+<%= render 'follow_list', users: @users, nobody_message: @nobody_message %>
