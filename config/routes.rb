@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :books do
     resources :comments, only: [:create], module: 'books'
   end
+  resources :reports do
+    resources :comments, only: [:create], module: 'reports'
+  end
   resources :users, only: %i[index show] do
     resource :relationships, only: %i[create destroy]
     scope module: :users do
@@ -13,5 +16,4 @@ Rails.application.routes.draw do
     end
     resources :reports, only: [:index], controller: 'users/reports'
   end
-  resources :reports
 end
