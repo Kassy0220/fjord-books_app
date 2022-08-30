@@ -246,6 +246,9 @@ ja:
         title: 日報作成
       index:
         title: "%{name}さんの日報"
+    comments:
+      create: コメントする
+      nothing: まだコメントはありません
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

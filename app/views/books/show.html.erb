@@ -22,3 +22,44 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+
+<h2><%= @comments.model_name.human %></h2>
+
+<div class="comments_list">
+  <% if @comments.empty? %>
+    <p><%= t('users.comments.nothing') %></p>
+  <% else %>
+    <ul>
+    <% @comments.each do |comment| %>
+      <li>
+        <p class="comment_writer"><%= comment.user.attribute_present?(:name) ? comment.user.name : comment.user.email %></p>
+        <p><%= comment.content %></p>
+        <span class="comment_created_at"><%= l(comment.created_at, format: :long)%></span>
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<%= form_with(model: @comment, url: book_comments_path(@book), local: true) do |form| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t 'errors.template.header', model: @comment.model_name.human, count: @comment.errors.count %></h2>
+
+      <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, required: true, size: '50x5' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t('users.comments.create') %>
+  </div>
+<% end %>
