@@ -28,6 +28,7 @@
         <span class="comment_created_at"><%= l(comment.created_at, format: :long)%></span>
         <% if comment.user == current_user %>
           <%= link_to t('views.common.edit'), edit_report_comment_path(@report, comment) %>
+          <%= link_to t('views.common.destroy'), report_comment_path(@report, comment), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
         <% end %>
       </li>
     <% end %>
