@@ -11,7 +11,7 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
     @comment = @report.comments.build
     # buildされたコメントが空のコメントとして表示されないようにreloadする
-    @comments = @report.comments.reload
+    @comments = @report.comments.reload.order(:created_at)
   end
 
   def new

@@ -12,7 +12,7 @@ class Books::CommentsController < CommentsController
   def render_when_unsaved
     @book = @commentable
     # books_controllerでセットされているインスタンス変数(@comment)が、空のコメントとして表示されないようにreloadする
-    @comments = @commentable.comments.reload
+    @comments = @commentable.comments.reload.order(:created_at)
 
     render 'books/show'
   end

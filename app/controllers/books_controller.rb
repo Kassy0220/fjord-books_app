@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   def show
     @comment = @book.comments.build
     # buildされたコメントが空のコメントとして表示されないようにreloadする
-    @comments = @book.comments.reload
+    @comments = @book.comments.reload.order(:created_at)
   end
 
   # GET /books/new
