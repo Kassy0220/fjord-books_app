@@ -8,4 +8,18 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def followings
+    @user = User.find(params[:id])
+    @users = @user.followings.order('followings.created_at desc')
+
+    render 'show_following'
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers.order('followings.created_at desc')
+
+    render 'show_follower'
+  end
 end
