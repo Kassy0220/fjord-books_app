@@ -5,7 +5,7 @@
     <% @reports.each do |report| %>
     <li>
       <p><%= link_to report.title, report %></p>
-      <span class="report_writer"><%= report.user.attribute_present?(:name) ? report.user.name : report.user.email %></span>
+      <span class="report_writer"><%= report.user.name_or_email %></span>
       <span class="report_created_at"><%= l(report.created_at, format: :date_only) %> の日報</span>
     </li>
     <% end %>

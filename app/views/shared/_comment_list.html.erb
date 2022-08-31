@@ -5,7 +5,7 @@
     <ul>
     <% @comments.each do |comment| %>
       <li>
-        <p class="comment_writer"><%= comment.user.attribute_present?(:name) ? comment.user.name : comment.user.email %></p>
+        <p class="comment_writer"><%= comment.user.name_or_email %></p>
         <p><%= comment.content %></p>
         <span class="comment_created_at"><%= l(comment.created_at, format: :long) %></span>
         <% if comment.user == current_user %>
