@@ -5,7 +5,7 @@
     <% @reports.each do |report| %>
     <li>
       <%= link_to report.title, report %>
-      <span class="report_writer"><%= report.user.name%></span>
+      <span class="report_writer"><%= report.user.name %></span>
     </li>
     <% end %>
   </ul>

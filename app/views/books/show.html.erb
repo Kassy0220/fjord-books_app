@@ -25,6 +25,6 @@
 
 <h2><%= @comments.model_name.human %></h2>
 
-<%= render partial: 'shared/comment_list' locals: { commentable: @book }%>
+<%= render partial: 'shared/comment_list' locals: { commentable: @book } %>
 
 <%= render partial: 'shared/comment_form', locals: { comment: @comment, commentable: @book, button_text: t('users.comments.create') } %>
