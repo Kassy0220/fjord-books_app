@@ -26,6 +26,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = current_user.comments.find(params[:id])
+    @comment.destroy
+    flash[:notice] = t('controllers.common.notice_destroy', name: Comment.model_name.human)
+    redirect_to @commentable
+  end
+
   private
 
   def comment_params
