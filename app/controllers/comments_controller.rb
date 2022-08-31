@@ -17,8 +17,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      flash[:notice] = t('controllers.common.notice_update', name: @comment.model_name.human)
-      redirect_to @commentable
+      redirect_to @commentable, notice: t('controllers.common.notice_update', name: @comment.model_name.human)
     else
       render 'edit'
     end
@@ -26,8 +25,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    flash[:notice] = t('controllers.common.notice_destroy', name: Comment.model_name.human)
-    redirect_to @commentable
+    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
