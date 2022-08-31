@@ -16,24 +16,6 @@
 
 <h2><%= @comments.model_name.human %></h2>
 
-<div class="comments_list">
-  <% if @comments.empty? %>
-    <p><%= t('users.comments.nothing') %></p>
-  <% else %>
-    <ul>
-    <% @comments.each do |comment| %>
-      <li>
-        <p class="comment_writer"><%= comment.user.attribute_present?(:name) ? comment.user.name : comment.user.email %></p>
-        <p><%= comment.content %></p>
-        <span class="comment_created_at"><%= l(comment.created_at, format: :long)%></span>
-        <% if comment.user == current_user %>
-          <%= link_to t('views.common.edit'), edit_report_comment_path(@report, comment) %>
-          <%= link_to t('views.common.destroy'), report_comment_path(@report, comment), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
-        <% end %>
-      </li>
-    <% end %>
-    </ul>
-  <% end %>
-</div>
+<%= render partial: 'shared/comment_list', locals: { commentable: @report } %>
 
 <%= render partial: 'shared/comment_form', locals: { comment: @comment, commentable: @report, button_text: t('users.comments.create') } %>
