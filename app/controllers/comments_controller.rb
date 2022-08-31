@@ -11,6 +11,21 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = @commentable.comments.find(params[:id])
+    redirect_to @commentable unless @comment.user == current_user
+  end
+
+  def update
+    @comment = current_user.comments.find(params[:id])
+    if @comment.update(comment_params)
+      flash[:notice] = t('controllers.common.notice_update', name: @comment.model_name.human)
+      redirect_to @commentable
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def comment_params
