@@ -33,6 +33,6 @@ class User < ApplicationRecord
   end
 
   def name_or_email
-    attribute_present?(:name) ? self.name : self.email
+    attribute_present?(:name) ? name : email
   end
 end
