@@ -36,6 +36,9 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = @commentable.comments.find(params[:id])
-    redirect_to @commentable unless @comment.user == current_user
+    return if @comment.user == current_user
+
+    flash[:alert] = t('views.common.not_permitted')
+    redirect_to @commentable
   end
 end
