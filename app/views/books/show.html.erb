@@ -22,3 +22,9 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+
+<h2><%= @comments.model_name.human %></h2>
+
+<%= render partial: 'shared/comment_list', locals: { commentable: @book } %>
+
+<%= render partial: 'shared/comment_form', locals: { comment: @comment, commentable: @book, button_text: t('users.comments.create') } %>

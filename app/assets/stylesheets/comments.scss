@@ -1,0 +1,24 @@
+.comments_list {
+  width: 1000px;
+}
+
+.comments_list ul {
+  list-style: none;
+}
+
+.comments_list li {
+  border-bottom: solid 1px lightgray;
+  padding: 0.5em 0;
+}
+
+.comments_list li:first-child {
+  border-top: solid 1px lightgray;
+}
+
+.comment_writer {
+  color: gray;
+}
+
+.comment_created_at {
+  color: gray;
+}

@@ -204,6 +204,7 @@ ja:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
+      date_only: "%Y年%m月%d日"
     pm: 午後
   views:
     common:
@@ -218,6 +219,7 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+      not_permitted: その操作は許可されていません
     pagination:
       first: '最初'
       last: '最後'
@@ -240,6 +242,15 @@ ja:
     followers:
       index:
         title: フォロワー
+    reports:
+      new:
+        title: 日報作成
+      index:
+        title: "%{name}さんの日報"
+        nothing: まだ日報を投稿していません
+    comments:
+      create: コメントする
+      nothing: まだコメントはありません
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

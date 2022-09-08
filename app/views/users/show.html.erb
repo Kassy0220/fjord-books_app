@@ -29,7 +29,7 @@
   <strong><%= User.human_attribute_name(:avatar) %>:</strong>
   <% if @user.avatar.attached? %>
     <br>
-    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150])%>
+    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150]) %>
   <% end %>
 </p>
 
@@ -37,6 +37,8 @@
   <li><%= link_to t('.followings', count: @user.followings.count), user_followings_path(@user) %></li>
   <li><%= link_to t('.followers', count: @user.followers.count), user_followers_path(@user) %></li>
 </ul>
+
+<p><%= link_to t('users.reports.index.title', name: @user.name_or_email), user_reports_path(@user) %></p>
 
 <% if current_user.following?(@user) %>
   <%= form_with(url: user_relationships_path(@user), method: :delete, local: true) do |f| %>
