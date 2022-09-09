@@ -12,4 +12,13 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(email: 'foo@example.com', name: 'Foo')
     assert_equal 'Foo', user.name_or_email
   end
+
+  test "#follow should enable user to follow other user" do
+    alpha = User.create!(email: 'alpha@example.com', password: 'password')
+    bravo = User.create!(email: 'bravo@example.com', password: 'password')
+    assert_difference 'alpha.followings.size', 1 do
+      alpha.follow bravo
+      alpha.followings.reload
+    end
+  end
 end
