@@ -21,4 +21,14 @@ class UserTest < ActiveSupport::TestCase
       alpha.followings.reload
     end
   end
+
+  test "#unfollow should enable user to unfollow other user" do
+    alpha = User.create!(email: 'alpha@example.com', password: 'password')
+    bravo = User.create!(email: 'bravo@example.com', password: 'password')
+    alpha.follow bravo
+    assert_difference 'alpha.followings.size', -1 do
+      alpha.unfollow bravo
+      alpha.followings.reload
+    end
+  end
 end
