@@ -39,4 +39,12 @@ class UserTest < ActiveSupport::TestCase
     alpha.follow bravo
     assert alpha.following?(bravo)
   end
+
+  test "#followed_by? should return true when user is followed by other user" do
+    alpha = User.create!(email: 'alpha@example.com', password: 'password')
+    bravo = User.create!(email: 'bravo@example.com', password: 'password')
+    assert_not alpha.followed_by?(bravo)
+    bravo.follow alpha
+    assert alpha.followed_by?(bravo)
+  end
 end
