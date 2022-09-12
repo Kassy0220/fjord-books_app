@@ -42,5 +42,16 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '二日目の日報'
     assert_text '二日目の日報です'
   end
+
+  test 'User can delete report' do
+    click_link '日報'
+    assert_text '最初の日報'
+
+    accept_confirm do
+      click_link '削除'
+    end
+    assert_text '日報が削除されました。'
+    assert_no_text '最初の日報'
+  end
 end
 
