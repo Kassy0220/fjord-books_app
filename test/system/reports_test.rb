@@ -4,10 +4,7 @@ require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   def setup
-    visit new_user_session_path
-    fill_in 'Eメール', with: 'alpha@example.com'
-    fill_in 'パスワード', with: 'password'
-    click_on 'ログイン'
+    sign_in_as users(:alpha)
   end
 
   test 'User can write daily report' do
