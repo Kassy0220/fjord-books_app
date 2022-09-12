@@ -54,4 +54,3 @@ class ReportsTest < ApplicationSystemTestCase
     assert_no_text '最初の日報'
   end
 end
-
