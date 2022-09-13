@@ -39,4 +39,15 @@ class BooksTest < ApplicationSystemTestCase
     assert_text '無免許の天才外科医ブラック・ジャックが活躍する医学ドラマです。'
     assert_text '手塚治虫'
   end
+
+  test 'destroying a Book' do
+    visit books_url
+    assert_text 'プロを目指す人のためのRuby入門'
+
+    page.accept_confirm do
+      click_link '削除', href: book_path(@book)
+    end
+    assert_text '本が削除されました'
+    assert_no_text 'プロを目指す人のためのRuby入門'
+  end
 end
