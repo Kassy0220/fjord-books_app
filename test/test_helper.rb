@@ -12,6 +12,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  include FactoryBot::Syntax::Methods
 end
 
 module SignInHelper
@@ -25,4 +26,5 @@ end
 
 class ActionDispatch::SystemTestCase
   include SignInHelper
+  include FactoryBot::Syntax::Methods
 end
