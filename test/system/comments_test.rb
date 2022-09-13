@@ -5,10 +5,11 @@ require 'application_system_test_case'
 class CommentsTest < ApplicationSystemTestCase
   def setup
     sign_in_as users(:alpha)
+    @book = books(:cherry_book)
   end
 
   test 'User can post comment on the book' do
-    click_link '詳細'
+    click_link '詳細', href: book_path(@book)
     assert_text '(コメントはまだありません)'
 
     fill_in 'comment_content', with: '私もこの本にお世話になりました'
