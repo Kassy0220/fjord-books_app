@@ -8,6 +8,15 @@ class BooksTest < ApplicationSystemTestCase
     @book = books(:cherry_book)
   end
 
+  test 'visiting the index' do
+    visit books_url
+    assert_selector 'h1', text: '本'
+    books = Book.all
+    books.each do |book|
+      assert_text book.title
+    end
+  end
+
   test 'creating a Book' do
     visit books_url
     click_on '新規作成'

@@ -4,3 +4,8 @@ cherry_book:
   title: プロを目指す人のためのRuby入門
   memo: 深い内容まで丁寧に解説してある名著です！
   author: 伊藤淳一
+
+<% 10.times do |i| %>
+sample_book_<%= i %>:
+  title: サンプル本 No.<%= i %>
+<% end %>
