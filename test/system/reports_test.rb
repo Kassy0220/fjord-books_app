@@ -37,6 +37,7 @@ class ReportsTest < ApplicationSystemTestCase
     fill_in '内容', with: '二日目の日報です'
     click_button '更新する'
     assert_selector 'h1', text: '日報の詳細'
+    assert_no_text '最初の日報'
     assert_text '日報が更新されました'
     assert_text '二日目の日報'
     assert_text '二日目の日報です'
