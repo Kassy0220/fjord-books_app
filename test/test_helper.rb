@@ -26,5 +26,4 @@ end
 
 class ActionDispatch::SystemTestCase
   include SignInHelper
-  include FactoryBot::Syntax::Methods
 end
