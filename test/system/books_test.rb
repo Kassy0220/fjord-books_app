@@ -4,14 +4,15 @@ require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    sign_in_as users(:alpha)
-    @book = books(:cherry_book)
+    user = create(:user)
+    sign_in_as user
+    @book = create(:book, title: '鴎', memo: '太宰治の短編小説です。', author: '太宰治')
   end
 
   test 'visiting the index' do
+    books = create_list(:book, 5)
     visit books_url
     assert_selector 'h1', text: '本'
-    books = Book.all
     books.each do |book|
       assert_text book.title
     end
@@ -35,9 +36,9 @@ class BooksTest < ApplicationSystemTestCase
   test 'updating a Book' do
     visit books_url
     click_link '編集', href: edit_book_path(@book)
-    assert_field 'タイトル', with: 'プロを目指す人のためのRuby入門'
-    assert_field 'メモ', with: '深い内容まで丁寧に解説してある名著です！'
-    assert_field '著者', with: '伊藤淳一'
+    assert_field 'タイトル', with: '鴎'
+    assert_field 'メモ', with: '太宰治の短編小説です。'
+    assert_field '著者', with: '太宰治'
 
     fill_in 'タイトル', with: 'ブラックジャック'
     fill_in 'メモ', with: '無免許の天才外科医ブラック・ジャックが活躍する医学ドラマです。'
@@ -51,12 +52,12 @@ class BooksTest < ApplicationSystemTestCase
 
   test 'destroying a Book' do
     visit books_url
-    assert_text 'プロを目指す人のためのRuby入門'
+    assert_text '鴎'
 
     page.accept_confirm do
       click_link '削除', href: book_path(@book)
     end
     assert_text '本が削除されました'
-    assert_no_text 'プロを目指す人のためのRuby入門'
+    assert_no_text '鴎'
   end
 end
