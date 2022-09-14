@@ -4,7 +4,9 @@ require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   def setup
-    sign_in_as users(:alpha)
+    user = create(:user)
+    create(:report, user: user)
+    sign_in_as user
   end
 
   test 'User can write daily report' do
@@ -21,7 +23,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が作成されました。'
     assert_text 'Railsのテスト'
     assert_text '操作をシミュレートするシステムテストは面白いです！'
-    assert_text 'Alpha'
+    assert_text '作成者: foo@example.com'
   end
 
   test 'User can edit report' do
