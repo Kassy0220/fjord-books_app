@@ -4,9 +4,9 @@ require 'application_system_test_case'
 
 class CommentsTest < ApplicationSystemTestCase
   def setup
-    user = create(:user)
-    sign_in_as user
-    @book = create(:book)
+    @user = create(:user)
+    sign_in_as @user
+    @book = create(:book, author: @user)
   end
 
   test 'User can post comment on the book' do
@@ -19,6 +19,6 @@ class CommentsTest < ApplicationSystemTestCase
     assert_no_text '(コメントはまだありません)'
     assert_text 'コメントが投稿されました。'
     assert_text '私もこの本にお世話になりました'
-    assert_link 'foo@example.com' # コメント投稿者のリンク
+    assert_link @user.email # コメント投稿者のリンク
   end
 end
