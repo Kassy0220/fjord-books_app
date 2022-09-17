@@ -11,7 +11,7 @@ class RelationshipsTest < ApplicationSystemTestCase
 
   test 'User can follow and unfollow other user' do
     click_link 'ユーザ'
-    assert_selector 'h1', text: 'ユーザ'
+    assert_selector 'h1', exact_text: 'ユーザ'
 
     click_link '詳細', href: user_path(@another_user)
     assert_text 'bar@example.com'

@@ -10,7 +10,7 @@ class UsersTest < ApplicationSystemTestCase
 
   test 'User can add avatar image to profile' do
     click_link 'アカウント編集'
-    assert_selector 'h2', text: 'アカウント編集'
+    assert_selector 'h2', exact_text: 'アカウント編集'
     assert_not @user.avatar.attached?
 
     attach_file 'ユーザ画像', Rails.root.join('test/factories/files/avatar-1.png')

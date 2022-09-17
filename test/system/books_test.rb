@@ -12,7 +12,7 @@ class BooksTest < ApplicationSystemTestCase
   test 'visiting the index' do
     books = create_list(:book, 5)
     visit books_url
-    assert_selector 'h1', text: '本'
+    assert_selector 'h1', exact_text: '本'
     books.each do |book|
       assert_text book.title
     end
